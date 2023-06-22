@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Jamamia | About
+  </title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+</head>
+
+<body>
+  
+
+  <!-- svg overlay -->
+  <div class="overlay">
+    <svg viewBox="0 0 350 1000">
+      <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+    </svg>
+  </div>
+
+
+  <div class="container" data-scroll-container>
+    <div class="header">Jamamia</div>
+    <div class="menu-open">menu</div>
+    <div class="site-content">
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero-header">
+          <div class="hero-header-wrapper">
+            <h1 class="jamamia">Jamamia</h1>
+            <div class="about-h1-revealer"></div>
+          </div>
+          
+          <div class="hero-header-wrapper">
+            <h1>Pizza</h1>
+            <div class="about-h1-revealer"></div>
+          </div>
+          
+        </div>
+        <div class="hero-img" data-scroll data-scroll-speed="3">
+          <div class="hero-img-wrap">
+            <img src="img/pizza-sauce.png" alt="Pizza Sauce" />
+          </div>
+        </div>
+      </section>
+      <!-- sub-hero -->
+      <section class="sub-hero">
+        <h2>enjoy our</h2>
+        <h2><span>small</span> pizza's</h2>
+        <h2>from italian <span>origin</span>.</h2>
+      </section>
+      <!-- disc -->
+      <section class="disc">
+        <div class="disc-img">
+          <div class="disc-copy">
+            <h4>            </h4>
+            <h3></h3>
+          </div>
+          <img src="img/pizza.png" alt="pizza image" />
+        </div>
+      </section>
+      <!-- about -->
+      <section class="about">
+        <h3>
+          Our food truck is called “Jamamia”, a food truck that gives an original twist to the classic Italian pizza. We offer a wide range of small pizzas, from authentic classics to modern creations, with a focus on fresh, high-quality ingredients. Our food truck is intended for young and old, and we want to offer visitors a fun and unforgettable experience.
+        </h3>
+      </section>
+
+      
+
+      <!-- footer -->
+      <footer>
+        <div class="footer-package">
+          <a href="./contact.html">Contact</a>
+          <h4>
+            created and<br />brought to life <span> by <br />Tiebo</span> Baerten
+          </h4>
+        </div>
+        <div class="footer-links">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookie</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+<!-- menu -->
+
+
+<div class="nav-container">
+  <div class="menu-close">X</div>
+  <div class="socials">
+    <span>facebook</span>
+    <span>instagram</span>
+  </div>
+  <nav class="menu">
+    <div class="menu__item">
+      <a class="menu__item-link" href="index.html">Home</a>
+      <img class="menu__item-img" src="img/menu-img-one.png" />
+      <div class="curtain">
+        <div class="curtain__inner">
+          <span>Home - Home - Home - Home - Home - Home - Home</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu__item">
+      <a class="menu__item-link" href="showcase.html">Showcase</a>
+      <img class="menu__item-img" src="img/menu-img-two.png" />
+      <div class="curtain">
+        <div class="curtain__inner">
+          <span>Showcase - Showcase - Showcase - Showcase - Showcase - Showcase
+            - Showcase</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu__item">
+      <a class="menu__item-link" href="about.html">About</a>
+      <img class="menu__item-img" src="img/menu-img-three.png" />
+      <div class="curtain">
+        <div class="curtain__inner">
+          <span>About - About - About - About - About - About - About</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu__item">
+      <a class="menu__item-link" href="contact.html">Contact</a>
+      <img class="menu__item-img" src="img/menu-img-four.png" />
+      <div class="curtain">
+        <div class="curtain__inner">
+          <span>Contact - Contact - Contact - Contact - Contact - Contact -
+            Contact</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script>
+  var t1 = new TimelineMax({ paused: true });
+
+  t1.to(".nav-container", 1, {
+    left: 0,
+    ease: Expo.easeInOut,
+  });
+
+  t1.staggerFrom(
+    ".menu > div",
+    0.8,
+    { y: 100, opacity: 0, ease: Expo.easeOut },
+    "0.1",
+    "-=0.4"
+  );
+
+  t1.staggerFrom(
+    ".socials",
+    0.8,
+    { y: 100, opacity: 0, ease: Expo.easeOut },
+    "0.4",
+    "-=0.6"
+  );
+
+  t1.reverse();
+  $(document).on("click", ".menu-open", function () {
+    t1.reversed(!t1.reversed());
+  });
+  $(document).on("click", ".menu-close", function () {
+    t1.reversed(!t1.reversed());
+  });
+</script>
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      multiplier: 0.75,
+      scrollFromAnywhere: true,
+    });
+
+    setTimeout(() => {
+      scroll.update();
+    }, 3000);
+  });
+
+  gsap.to("h1", 2, {
+    // delay: 0.25,
+    top: "-40px",
+    ease: "power4.inOut",
+    stagger: {
+      amount: 0.125,
+    },
+  });
+  gsap.to(".hero .hero-img", 0.05, { opacity: 1 });
+
+  gsap.from(".hero .hero-img", 1, {
+    delay: 1.5,
+    clipPath: "inset(0 100% 0 0)",
+    ease: "power4.inOut",
+  });
+
+  gsap.to(".disc-img", 1, {
+    rotate: 360,
+    ease: "power2.inOut",
+  });
+
+  // Select the disc image element
+  const discImg = document.querySelector(".disc-img");
+
+  // Array of objects with random h4 and h3 content
+  const discContent = [
+    {
+      h4: "She creates Rhythm tracks from noise, an undisputed genius",
+      h3: "Platform II",
+    },
+    {
+      h4: "She has collected certifications in every field, and vibes",
+      h3: "Studio 27",
+    },
+    {
+      h4: "Neurobiology of musical cognition to construction in industry",
+      h3: "Awkward Biz",
+    },
+    {
+      h4: "Originally studied cinema & videomaking for visuals film design",
+      h3: "Awwards",
+    },
+  ];
+
+  // Initial index for content
+  let currentIndex = 0;
+
+  // Function to update the content of the disc image
+  function updateContent() {
+    // Select the h4 and h3 elements inside the disc image
+    const h4Element = discImg.querySelector("h4");
+    const h3Element = discImg.querySelector("h3");
+
+    // Get the current item based on the currentIndex
+    const currentItem = discContent[currentIndex];
+
+    // Update the content with the current item
+    h4Element.textContent = currentItem.h4;
+    h3Element.textContent = currentItem.h3;
+
+    // Increment the currentIndex
+    currentIndex = (currentIndex + 1) % discContent.length;
+  }
+
+  // Add a click event listener to the disc image
+  discImg.addEventListener("click", () => {
+    // Use GSAP to animate the disc image
+    gsap.to(discImg, {
+      scale: 0, // Scale down to 0
+      rotation: "+=360", // Rotate by 360 degrees
+      onComplete: () => {
+        // Update the content
+        //updateContent();
+
+        // After the first animation completes, scale up to normal size with rotation
+        gsap.to(discImg, {
+          scale: 1,
+          rotation: "+=360",
+        });
+      },
+    });
+  });
+
+  // Initial content update on page load
+  //updateContent();
+</script>
+
+</html>

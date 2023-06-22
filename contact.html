@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Jamamia | Contact
+    </title>
+    
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+  </head>
+  <body>
+
+    <!-- svg overlay -->
+    <div class="overlay">
+      <svg viewBox="0 0 350 1000">
+        <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
+      </svg>
+    </div>
+
+    <div class="container" data-scroll-container>
+      <div class="header">Jamamia</div>
+      <div class="menu-open">menu</div>
+      <div class="site-content">
+        <div class="contact" data-scroll-section>
+          <div class="contact-copy">
+            <div class="contact-copy-wrapper">
+              <div class="mail">
+                <p>jamamia@gmail.com</p>
+              </div>
+              <div class="socials2">
+                <div class="socials-col">
+                  <div class="social">
+                    <ion-icon name="logo-twitter"></ion-icon> 
+                    <p>Twitter</p>
+                  </div>
+
+                  <div class="social">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <p>Facebook</p>
+                  </div>
+                </div>
+                <div class="socials-col">
+                  <div class="social">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <p>Instagram</p>
+                  </div>
+                  <div class="social">
+                    <ion-icon name="musical-notes-sharp"></ion-icon>
+                    <p>
+                    <a href="https://open.spotify.com/playlist/5cqupMXG8pMwxGTgHjQSXn?si=fd4580e788d84c7c">Spotify</a>
+                  </p>
+                  </div>
+                </div>
+              </div>
+              <div class="newsletter">
+                <h4>Newsletter</h4>
+                <p>Email Address</p>
+                <div class="input">
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-header">
+            <h2>
+              &nbsp;Would <span id="italic">you</span> like<br />
+              &nbsp;&nbsp;&nbsp;&nbsp; <span id="italic">to</span> <span id="italic">get</span> in
+              <br />&nbsp;&nbsp;touch?
+            </h2>
+            <h5>Or just say hello.</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- menu -->
+      
+      <div class="nav-container">
+        <div class="menu-close">X</div>
+        <div class="socials">
+          <span>facebook</span>
+          <span>instagram</span>
+        </div>
+        <nav class="menu">
+          <div class="menu__item">
+            <a class="menu__item-link" href="index.html">Home</a>
+            <img class="menu__item-img" src="img/menu-img-one.png" />
+            <div class="curtain">
+              <div class="curtain__inner">
+                <span>Home - Home - Home - Home - Home - Home - Home</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link" href="showcase.html">Showcase</a>
+            <img class="menu__item-img" src="img/menu-img-two.png" />
+            <div class="curtain">
+              <div class="curtain__inner">
+                <span>Showcase - Showcase - Showcase - Showcase - Showcase - Showcase
+                  - Showcase</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link" href="about.html">About</a>
+            <img class="menu__item-img" src="img/menu-img-three.png" />
+            <div class="curtain">
+              <div class="curtain__inner">
+                <span>About - About - About - About - About - About - About</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link" href="contact.html">Contact</a>
+            <img class="menu__item-img" src="img/menu-img-four.png" />
+            <div class="curtain">
+              <div class="curtain__inner">
+                <span>Contact - Contact - Contact - Contact - Contact - Contact -
+                  Contact</span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      </div>
+
+    <script>
+      var t1 = new TimelineMax({ paused: true });
+
+      t1.to(".nav-container", 1, {
+        left: 0,
+        ease: Expo.easeInOut,
+      });
+
+      t1.staggerFrom(
+        ".menu > div",
+        0.8,
+        { y: 100, opacity: 0, ease: Expo.easeOut },
+        "0.1",
+        "-=0.4"
+      );
+
+      t1.staggerFrom(
+        ".socials",
+        0.8,
+        { y: 100, opacity: 0, ease: Expo.easeOut },
+        "0.4",
+        "-=0.6"
+      );
+
+      t1.reverse();
+      $(document).on("click", ".menu-open", function () {
+        t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", ".menu-close", function () {
+        t1.reversed(!t1.reversed());
+      });
+    </script>
+
+  </body>
+</html>
